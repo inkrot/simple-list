@@ -17,6 +17,13 @@ class NoteController extends AbstractController
     }
 
     /**
+     * @Route("/add", name="add_page")
+     */
+    public function addPage() {
+        return $this->render('note/add.html.twig');
+    }
+
+    /**
      * @Route("/help", name="help_page")
      */
     public function help() {
