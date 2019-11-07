@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Note;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class NoteController extends AbstractController
@@ -17,10 +18,31 @@ class NoteController extends AbstractController
     }
 
     /**
-     * @Route("/add", name="add_page")
+     * @Route("/note/add", name="add_note_page")
      */
     public function addPage() {
         return $this->render('note/add.html.twig');
+    }
+
+    /**
+     * @Route("/note/add_action", methods={"POST"}, name="add_note_action")
+     * @param Request $request
+     * @return Response
+     */
+    public function addNote(Request $request)
+    {
+        dump($request);
+        return new Response('Saved new product with id');
+        $em = $this->getDoctrine()->getManager();
+
+        $note = new Note();
+        $note->setTitle('a');
+
+        $em->persist($note);
+
+        $em->flush();
+
+        return new Response('Saved new product with id ' . $note->getId());
     }
 
     /**
@@ -46,25 +68,5 @@ class NoteController extends AbstractController
         }*/
 
         return $this->json($note);
-    }
-
-    /**
-     * @Route("/note", methods={"POST"}, name="add_note")
-     * @param Request $request
-     * @return Response
-     */
-    public function addNote(Request $request)
-    {
-        return new Response(dump($request));
-        $em = $this->getDoctrine()->getManager();
-
-        $note = new Note();
-        $note->setTitle('a');
-
-        $em->persist($note);
-
-        $em->flush();
-
-        return new Response('Saved new product with id ' . $note->getId());
     }
 }

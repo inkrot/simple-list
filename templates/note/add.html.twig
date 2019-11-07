@@ -1,13 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Список заметок{% endblock %}
+{% block title %}Добавить заметку{% endblock %}
 
 {% block body %}
 
-    {% include 'navbar.html.twig' with {'active': 'notes'} %}
+    {% include 'navbar.html.twig' with {'active': 'note_add'} %}
 
-    <div class="col-xs-1 mt-2 ml-2 mr-2">
-
+    <div class="col-lg-3 col-lg-6 mx-auto mt-3 ml-4 mr-5">
+        <form action="{{ path('add_note_action') }}">
+            <div class="form-group">
+                <label for="note-title-input">Заголовок</label>
+                <input type="text" class="form-control" id="note-title-input">
+            </div>
+            <div class="form-group">
+                <label for="note-text-input">Текст заметки</label>
+                <textarea class="form-control" id="note-text-input" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary float-right" type="submit">Button</button>
+        </form>
     </div>
 
 {% endblock %}

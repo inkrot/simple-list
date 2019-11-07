@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b492edc5-2d61-46e3-933d-03c9fdf05735" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/NoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NoteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/note/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/note/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/note/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/note/add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/note/help.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/note/help.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +21,6 @@
     <execution>
       <executable path="composer" />
     </execution>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>notes_page</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,16 +99,21 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1TC3yJhB5PbqOQu1j3TOWuMobQE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/note" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.YAML" />
+    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Islam\PhpstormProjects\simple-list\templates\note" />
       <recent name="C:\Users\Admin\PhpstormProjects\simple-list\templates\note" />
     </key>
   </component>
@@ -149,7 +152,8 @@
       <workItem from="1572807305310" duration="777000" />
       <workItem from="1572866578290" duration="24420000" />
       <workItem from="1572937788271" duration="1523000" />
-      <workItem from="1572950503790" duration="3545000" />
+      <workItem from="1572950503790" duration="4406000" />
+      <workItem from="1573162642185" duration="4328000" />
     </task>
     <servers />
   </component>
@@ -161,7 +165,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
