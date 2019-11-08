@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Note;
+use DateTime;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,15 +30,19 @@ class NoteController extends AbstractController
      * @Route("/note/add_action", methods={"POST"}, name="add_note_action")
      * @param Request $request
      * @return Response
+     * @throws Exception
      */
     public function addNote(Request $request)
     {
-        dump($request);
-        return new Response('Saved new product with id');
+        $noteTitle = $request->get('note_title');
+        $noteText = $request->get('note_text');
+
         $em = $this->getDoctrine()->getManager();
 
         $note = new Note();
-        $note->setTitle('a');
+        $note->setTitle($noteTitle);
+        $note->setText($noteText);
+        $note->setDate(new DateTime());
 
         $em->persist($note);
 

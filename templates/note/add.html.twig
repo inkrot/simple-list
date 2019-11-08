@@ -7,14 +7,15 @@
     {% include 'navbar.html.twig' with {'active': 'note_add'} %}
 
     <div class="col-lg-3 col-lg-6 mx-auto mt-3 ml-4 mr-5">
-        <form action="{{ path('add_note_action') }}">
+        <form action="{{ path('add_note_action') }}" method="post">
+            <input name="_method" value="post" hidden>
             <div class="form-group">
                 <label for="note-title-input">Заголовок</label>
-                <input type="text" class="form-control" id="note-title-input">
+                <input name="note_title" type="text" class="form-control" id="note-title-input">
             </div>
             <div class="form-group">
                 <label for="note-text-input">Текст заметки</label>
-                <textarea class="form-control" id="note-text-input" rows="3"></textarea>
+                <textarea name="note_text" class="form-control" id="note-text-input" rows="3"></textarea>
             </div>
             <button class="btn btn-primary float-right" type="submit">Button</button>
         </form>
