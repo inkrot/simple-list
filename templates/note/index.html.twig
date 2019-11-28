@@ -8,13 +8,15 @@
 
     <div class="col-lg-3 col-lg-6 mx-auto mt-3 ml-4 mr-5">
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            </a>
+            {% for note in notes %}
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ note.title }}</h5>
+                        <small>{{ note.date|date_modify("+1 day")|date("d.m.Y") }}</small>
+                    </div>
+                    <p class="mb-1">{{ note.text }}</p>
+                </a>
+            {% endfor %}
         </div>
     </div>
 

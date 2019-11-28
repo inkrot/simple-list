@@ -19,8 +19,14 @@
       <paths name="symfonytest.uxp.ru">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/vendor" />
+            <excludedPath local="true" path="$PROJECT_DIR$/var" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

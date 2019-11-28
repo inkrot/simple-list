@@ -15,14 +15,19 @@ class NoteController extends AbstractController
     /**
      * @Route("/notes", name="notes_page")
      */
-    public function index() {
-        return $this->render('note/index.html.twig');
+    public function notesPage() {
+        $notes = $this->getDoctrine()
+            ->getRepository(Note::class)
+            ->findBy(array(), array('date' => 'DESC'));
+        return $this->render('note/index.html.twig', [
+            'notes' => $notes
+        ]);
     }
 
     /**
      * @Route("/note/add", name="add_note_page")
      */
-    public function addPage() {
+    public function addNotePage() {
         return $this->render('note/add.html.twig');
     }
 
@@ -48,7 +53,8 @@ class NoteController extends AbstractController
 
         $em->flush();
 
-        return new Response('Saved new product with id ' . $note->getId());
+        return $this->redirectToRoute('notes_page');
+        //return new Response('Saved new product with id ' . $note->getId());
     }
 
     /**
